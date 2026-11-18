@@ -161,7 +161,7 @@ Use the example from the planning:
 | Problem | Fix |
 |---|---|
 | Page says **"Almost there… not connected"** | Step 4 wasn't saved. Check `js/config.js` on GitHub, then wait 1 minute for Netlify to update. |
-| **"Wrong password"** | Use the password you typed in Step 2. If you forgot it, open Supabase **SQL Editor** and run `update app_secret set password_hash = extensions.crypt('NewPassword', extensions.gen_salt('bf'));` |
+| **"Wrong password"** | Use the password you typed in Step 2. If you forgot it, open Supabase **SQL Editor** and run `update app_secret set password_hash = extensions.crypt('NewPassword', extensions.gen_salt('bf')) where id = 1;` |
 | Top right shows **"Reconnecting…"** | The internet dropped, or the phone was asleep. It fixes itself, and the screen still refreshes every 30 seconds. Pull down to reload if needed. |
 | **Everything stopped working after a week or more of no use** | Supabase pauses free projects after 7 days without activity. Log in to supabase.com, open the project, and click **Restore project**. Daily use keeps it awake. |
 | Tapped the wrong thing | Tap **Undo** (it can go back many steps). |

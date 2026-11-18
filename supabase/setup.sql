@@ -158,8 +158,8 @@ declare d date := private.salon_today();
 begin
   if (select current_day from settings where id = 1) is distinct from d then
     update jobs set finished_at = coalesce(finished_at, now()) where finished_at is null;
-    delete from roster;
-    delete from undo_log;
+    delete from roster where true;
+    delete from undo_log where true;
     delete from jobs where day < d - 30;
     update settings set current_day = d where id = 1;
   end if;
@@ -374,7 +374,7 @@ begin
   select * into u from undo_log order by id desc limit 1;
   if u is null then return private.result(false, 'Nothing to undo.'); end if;
 
-  delete from roster;
+  delete from roster where true;
   delete from jobs where day = private.salon_today();
   insert into jobs overriding system value
     select * from jsonb_populate_recordset(null::jobs, u.jobs);
