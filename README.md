@@ -87,6 +87,22 @@ Both values are safe to put in a public website. The manager password is what pr
 3. Replace `PASTE-YOUR-PROJECT-URL-HERE` with your Project URL, and `PASTE-YOUR-PUBLISHABLE-KEY-HERE` with your key. Keep the quote marks.
 4. Click **Commit changes…**, then **Commit changes** again.
 
+### Optional: try it on your laptop before putting it online
+
+You can skip Step 5 at first and run the site straight from your laptop. You still need Steps 1–4, because the line is stored in Supabase.
+
+1. On GitHub, open this repository, click the green **Code** button, then **Download ZIP**.
+2. Open your Downloads folder and unzip the file:
+   - **Windows:** right-click it and choose **Extract All**.
+   - **Mac:** double-click it.
+3. Open the new `wayside-queue-main` folder.
+4. Double-click `manager.html`. It opens in your web browser. Log in with your password.
+5. Double-click `index.html` too. This is the tech view. Put the two windows side by side, tap a service in the manager window, and watch the tech view change by itself.
+
+Only your laptop can see this copy. Phones need the online version from Step 5.
+
+If you change `js/config.js` on GitHub later, download the ZIP again.
+
 ### Step 5: Put the website online (Netlify)
 
 1. Go to **https://www.netlify.com** and click **Sign up**. Choose **Sign up with GitHub** and approve. If it asks about a plan, pick **Free**.
