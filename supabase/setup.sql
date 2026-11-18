@@ -110,7 +110,16 @@ alter table public.undo_log      enable row level security;
 do $$
 declare t text;
 begin
+  -- Website visitors may only READ these tables (newer Supabase projects
+  -- do not expose new tables automatically, so we grant it here).
+  if exists (select 1 from pg_roles where rolname = 'anon') then
+    execute 'grant usage on schema public to anon, authenticated';
+    execute 'revoke all on public.app_secret, public.undo_log from anon, authenticated';
+  end if;
   foreach t in array array['settings','services','techs','tech_services','jobs','roster'] loop
+    if exists (select 1 from pg_roles where rolname = 'anon') then
+      execute format('grant select on public.%I to anon, authenticated', t);
+    end if;
     execute format('drop policy if exists "public read" on public.%I', t);
     execute format('create policy "public read" on public.%I for select using (true)', t);
   end loop;
