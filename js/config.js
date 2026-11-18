@@ -6,6 +6,6 @@
 //   protects changes, and it is NOT stored here.)
 // =====================================================================
 window.APP_CONFIG = {
-  SUPABASE_URL: "PASTE-YOUR-PROJECT-URL-HERE",   // looks like https://abcdefgh.supabase.co
-  SUPABASE_KEY: "PASTE-YOUR-PUBLISHABLE-KEY-HERE" // starts with sb_publishable_ (or the long "anon" key)
+  SUPABASE_URL: "https://lhnkcanqdluinuboimzf.supabase.co",   // looks like https://abcdefgh.supabase.co
+  SUPABASE_KEY: "sb_publishable_BI8KI9LESnN7-RFPydsrKQ_p6mDusrN" // starts with sb_publishable_ (or the long "anon" key)
 };
