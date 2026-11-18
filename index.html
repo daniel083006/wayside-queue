@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Salon Line</title>
+  <meta name="theme-color" content="#8a3b5c">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <h1 id="salon">Wayside Nails</h1>
+      <span id="live" class="live off">Connecting…</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>The Line</h2>
+      <p class="hint">Next walk-in goes to the first tech from the top who can do the service.</p>
+      <ol id="line" class="line"></ol>
+    </section>
+
+    <section class="card">
+      <h2>Busy</h2>
+      <ul id="busy" class="busy-list"></ul>
+    </section>
+
+    <p class="foot">This screen updates by itself. Only the front desk can change the line.</p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/dist/umd/supabase.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/view.js"></script>
+</body>
+</html>
